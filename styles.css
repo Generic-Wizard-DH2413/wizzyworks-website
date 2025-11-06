@@ -88,9 +88,16 @@ section {
 /* Team Section */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 2rem;
+}
+
+/* make the 5th item span the full row and center it */
+.team-grid .team-member:nth-child(5) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(60%, 600px);
 }
 
 .team-member {
@@ -131,6 +138,59 @@ section {
     opacity: 0.8;
 }
 
+/* Collapsible description */
+.member-description {
+    max-height: 6.2em; /* ~3 lines depending on font-size */
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    position: relative;
+    text-align: left;
+}
+
+/* expanded state */
+.member-description.expanded {
+    max-height: 1000px; /* large value to allow expansion */
+}
+
+/* small gradient fade at the bottom when collapsed */
+.member-description::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2.2em;
+    background: linear-gradient(180deg, rgba(24,24,27,0) 0%, var(--background-color) 100%);
+    pointer-events: none;
+}
+
+/* hide fade when expanded */
+.member-description.expanded::after {
+    display: none;
+}
+
+/* See more button */
+.see-more {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--accent-color);
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 0.75rem;
+    transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.see-more:hover {
+    background: rgba(255,255,255,0.03);
+    opacity: 0.95;
+}
+
+/* keep centered layout for team-member content */
+.team-member {
+    text-align: center;
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -140,6 +200,16 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 900px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-grid .team-member:nth-child(5) {
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
@@ -151,5 +221,11 @@ footer {
 
     .team-grid {
         grid-template-columns: 1fr;
+    }
+
+    .team-grid .team-member:nth-child(5) {
+        grid-column: auto;
+        justify-self: stretch;
+        width: 100%;
     }
 }

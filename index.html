@@ -56,53 +56,91 @@
       <div class="team-grid">
         <div class="team-member">
           <img
-            src="path-to-rej-photo.jpg"
+            src="src/imgs/Oskar_Hokkanen_Eriksson.jpg"
             alt="Rej Karlander"
             class="member-photo"
           />
           <h3>Rej Karlander</h3>
           <a href="mailto:rejk@kth.se" class="email-link">rejk@kth.se</a>
-          <p>Contribution description...</p>
+          <p class="member-description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Voluptatibus quaerat pariatur enim, corporis in, aliquid velit animi
+            fugit incidunt amet, eos quae. Aut eveniet dolores sunt eum unde
+            esse facere ex dolor tenetur. Illum quae pariatur repudiandae, totam
+            saepe error eum sed? Nesciunt tenetur iusto sunt saepe quis? Ipsam,
+            facere impedit magni quas enim autem hic illo ut numquam, doloribus
+            ea explicabo. Exercitationem fugit soluta doloremque numquam
+            sapiente dicta deserunt nihil quasi quod laboriosam, cum ipsam
+            dolorum nisi veritatis impedit ut quae cumque corrupti! Iusto
+            delectus accusamus non eveniet esse, dolorum explicabo atque, fugiat
+            incidunt inventore eligendi. Cum voluptatibus sequi obcaecati
+            voluptatem, quae placeat architecto esse veniam dicta temporibus
+            dolorem perferendis debitis atque itaque voluptas excepturi id
+            tempore exercitationem dolores possimus deserunt fugiat totam
+            adipisci? Ut reprehenderit enim itaque doloremque facilis suscipit
+            obcaecati nulla, quae magni, earum magnam quas cum sed quia odio
+            provident. Rerum quasi sit quibusdam ab. Laborum nulla aliquam sit
+            eaque, accusantium necessitatibus, soluta at reprehenderit aperiam
+            itaque vel magni. Pariatur, voluptates? Suscipit dolorum sit aliquam
+            eligendi dicta, porro explicabo? Perspiciatis est architecto
+            exercitationem odio suscipit accusantium doloribus illo doloremque
+            quod. Dicta sed ut nemo iusto minus?
+          </p>
+          <button type="button" class="see-more" aria-expanded="false">
+            See more
+          </button>
         </div>
         <div class="team-member">
           <img
-            src="path-to-alvar-photo.jpg"
+            src="src/imgs/Oskar_Hokkanen_Eriksson.jpg"
             alt="Alvar Trojenborg"
             class="member-photo"
           />
           <h3>Alvar Trojenborg</h3>
           <a href="mailto:alvar@kth.se" class="email-link">alvar@kth.se</a>
-          <p>Contribution description...</p>
+          <p class="member-description">Contribution description...</p>
+          <button type="button" class="see-more" aria-expanded="false">
+            See more
+          </button>
         </div>
         <div class="team-member">
           <img
-            src="path-to-lambo-photo.jpg"
+            src="src/imgs/Oskar_Hokkanen_Eriksson.jpg"
             alt="Lambo Jingwen Zhuang"
             class="member-photo"
           />
           <h3>Lambo Jingwen Zhuang</h3>
           <a href="mailto:lambo@kth.se" class="email-link">lambo@kth.se</a>
-          <p>Contribution description...</p>
+          <p class="member-description">Contribution description...</p>
+          <button type="button" class="see-more" aria-expanded="false">
+            See more
+          </button>
         </div>
         <div class="team-member">
           <img
-            src="path-to-markus-photo.jpg"
+            src="src/imgs/Oskar_Hokkanen_Eriksson.jpg"
             alt="Markus Wessén"
             class="member-photo"
           />
           <h3>Markus Wessén</h3>
           <a href="mailto:markus@kth.se" class="email-link">markus@kth.se</a>
-          <p>Contribution description...</p>
+          <p class="member-description">Contribution description...</p>
+          <button type="button" class="see-more" aria-expanded="false">
+            See more
+          </button>
         </div>
         <div class="team-member">
           <img
-            src="path-to-oskar-photo.jpg"
+            src="src/imgs/Oskar_Hokkanen_Eriksson.jpg"
             alt="Oskar Hokkanen Eriksson"
             class="member-photo"
           />
           <h3>Oskar Hokkanen Eriksson</h3>
           <a href="mailto:oskar@kth.se" class="email-link">oskar@kth.se</a>
-          <p>Contribution description...</p>
+          <p class="member-description">Contribution description...</p>
+          <button type="button" class="see-more" aria-expanded="false">
+            See more
+          </button>
         </div>
       </div>
     </section>
@@ -111,5 +149,17 @@
     <footer>
       <p>&copy; 2025 WizzyWorks. All rights reserved.</p>
     </footer>
+
+    <script>
+      // collapse/expand "see more" logic
+      document.querySelectorAll(".see-more").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const p = btn.previousElementSibling;
+          const expanded = p.classList.toggle("expanded");
+          btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+          btn.textContent = expanded ? "See less" : "See more";
+        });
+      });
+    </script>
   </body>
 </html>
