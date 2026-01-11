@@ -40,9 +40,9 @@
         </p>
 
         <h3>Goals and Motivation</h3>
-        <p>Our goal was to provide a fun, personalized, safe and immersive firework experience that encourages creativity, by turning simple custom drawings and designs into realistic and vibrant fireworks. A goal was also to develop a continuity between your phone and a larger experience.Essentially: Something magical for the kids (and adults) at the museum.</p>
+        <p>Our goal was to provide a fun, personalized, safe and immersive firework experience that encourages creativity, by turning simple custom drawings and designs into realistic and vibrant fireworks. A goal was also to develop a continuity between your phone and a larger experience. Essentially: Something magical for the kids (and adults) at the museum.</p>
         <h3>Graphics and Interaction Technology</h3>
-        <p>In the project we used a relatively wide assortment of technologies simply in order to get the project running. We decided to use phones to create fireworks as it made it easier for most people to participate, and thus we needed a website on which to create the fireworks. This was developed in React and communicated with the server through websockets.</p>
+        <p>In the project we used a relatively wide assortment of technologies simply in order to get the project running. We decided to use phones to create fireworks as it made it easier for most people to participate, and thus we needed a website on which to create the fireworks as well as a server to allow the phones to communicate with the larger screen. This was developed in React and communicated with the server through websockets.</p>
         <img  src="src/imgs/frontend.png" alt="Frontend of Wizzyworks" />
         <p>To scan the position of the firework we used a camera which would detect small QR-codes (ArUco) displayed on the phone, using python and OpenCV. These would then be matched with the firework data passed over the internet, combining position and data. This is all done in python, and formatted using json, as it is a very standard approach. 
           The jsons are then interpreted by the game engine Godot which renders the firework in the correct position. Godot was used because it is a lightweight development environment that's easy to modify, which made it easier to set-up the project, work on it simultaneously, and try different things. The Godot program with the fireworks was displayed on a giant project at Tekniska Museet, in order to get an impactful experience. Large speakers were added to ensure the blast of the fireworks felt both impressive and immersive.</p>
@@ -187,41 +187,8 @@
             >markus.wessen@gmail.com</a
           >
           <p class="member-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-            itaque vitae dolor dignissimos laborum molestias voluptatem illum
-            dolorum laboriosam quo officiis veniam enim numquam delectus minus,
-            pariatur reiciendis rem aliquam eius. Nihil, veniam. Molestiae error
-            rem totam qui expedita doloribus, saepe incidunt vitae libero
-            aspernatur, delectus porro nostrum. Dolorem inventore deserunt
-            tempora, laudantium optio tempore labore, amet in ratione delectus
-            veniam laborum nulla. Sapiente fugit labore perspiciatis animi
-            voluptatibus obcaecati enim quaerat dolore eligendi voluptate illo
-            qui modi alias blanditiis totam at quia, repudiandae velit nesciunt
-            laborum cum accusantium incidunt. Autem, tempore laborum similique
-            beatae non consequatur iusto corporis voluptate mollitia deleniti
-            aperiam necessitatibus aliquam quo illum ipsum enim dolorum iste,
-            repudiandae eum? Quia aspernatur voluptates eos, numquam
-            voluptatibus aliquid. Provident optio nam, odit quaerat sapiente
-            commodi dolor esse quasi! Nostrum iusto aspernatur, ipsam ipsum qui
-            alias assumenda quidem et sequi ipsa harum ea officiis minima
-            dolorem debitis? Culpa fuga doloribus iste unde fugit! Ipsum rem
-            itaque similique eaque ratione error, vitae distinctio at nesciunt,
-            assumenda libero repellat adipisci labore inventore sapiente omnis
-            provident enim deserunt? Maxime aspernatur dolore doloremque dolorum
-            quis impedit? Quisquam esse consectetur cupiditate nam architecto
-            ipsam a deserunt quis molestiae numquam corrupti ad, voluptatibus
-            eligendi dolore eaque recusandae, quibusdam consequatur iure
-            laboriosam molestias facilis placeat facere eveniet sit! Eaque
-            incidunt quas enim recusandae. Reiciendis illo, neque libero id nemo
-            modi fugit nulla deleniti inventore magni deserunt explicabo
-            adipisci blanditiis laborum velit tenetur atque. Cumque enim
-            voluptatibus harum quam accusantium officiis placeat nisi ex, sed
-            labore repudiandae, sunt recusandae deleniti sequi reiciendis
-            quibusdam et quo commodi ipsam pariatur, similique minus blanditiis
-            delectus? Harum quam ad tempore quo quisquam sunt blanditiis non
-            nulla omnis maiores possimus nemo eum molestias earum nam nostrum
-            perspiciatis ex doloremque, corrupti beatae? Qui iure dolor dicta
-            quaerat non at sed, excepturi distinctio molestias.
+            I developed the server component of the project using Python. The server establishes a connection with each user's phone and a connection with the bridge component. It assigns an ID to each user's phone and receives firework data from them via WebSocket and forwards it to the bridge using UDP protocol. It reuses ID's to prevent running out of available ID's when many users connect and disconnect frequently.
+            I also helped developing the graphics and implemented two custom firework shader types in godot (saturn and tornado). I also experimented with some sound effects for the fireworks.
           </p>
           <button type="button" class="see-more" aria-expanded="false">
             See more
