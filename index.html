@@ -35,8 +35,32 @@
     <section id="description">
       <h2>About the Project</h2>
       <div class="description-content">
-        <p>This is the coolest project. We like fireworks.</p>
-      </div>
+        <p>Wizzyworks is an immersive experience in which a visitor gets to design and shoot off fireworks. Any visitor may take out their smartphone and scan a QR code, which takes them to a website where they can customize up to nine different fireworks, through shapes and colors or by drawing on a canvas.
+        When done, the visitor goes to the large screen and places the phone standing straight on the floor. The visitor taps on the phone to light the firework, then backs off from the launch zone. The position of the phone is determined by the camera, and the fireworks are fired from the phone, into the big screen, generated based on the custom input.
+        </p>
+
+        <h3>Goals and Motivation</h3>
+        <p>Our goal was to provide a fun, personalized, safe and immersive firework experience that encourages creativity, by turning simple custom drawings and designs into realistic and vibrant fireworks. A goal was also to develop a continuity between your phone and a larger experience.Essentially: Something magical for the kids (and adults) at the museum.</p>
+        <h3>Graphics and Interaction Technology</h3>
+        <p>In the project we used a relatively wide assortment of technologies simply in order to get the project running. We decided to use phones to create fireworks as it made it easier for most people to participate, and thus we needed a website on which to create the fireworks. This was developed in React and communicated with the server through websockets.</p>
+        <img  src="/src/imgs/frontend.png" alt="Frontend of Wizzyworks" />
+        <p>To scan the position of the firework we used a camera which would detect small QR-codes (ArUco) displayed on the phone, using python and OpenCV. These would then be matched with the firework data passed over the internet, combining position and data. This is all done in python, and formatted using json, as it is a very standard approach. 
+          The jsons are then interpreted by the game engine Godot which renders the firework in the correct position. Godot was used because it is a lightweight development environment that's easy to modify, which made it easier to set-up the project, work on it simultaneously, and try different things. The Godot program with the fireworks was displayed on a giant project at Tekniska Museet, in order to get an impactful experience. Large speakers were added to ensure the blast of the fireworks felt both impressive and immersive.</p>
+        <img src="src/imgs/visuals.png" alt="Technologies used">
+        <h3>Challenges and Obstacles</h3>
+        <p>Some of the challenges are to track the position of the user's phone relative to the big screen, which requires calibrated cameras and consistent positioning. Another challenge was to create realistic and appealing visuals and sound quality based on provided custom data, and to make the experience engaging. This was a trial and error kind of thing, which was made easier by having an early prototype that we could test. Due to this we were able to get a better sense of what people chose to interact with, and thus what was “engaging”.</p>
+        <h3>Related Work</h3>
+        <h4><a href="https://mrlin2020.wordpress.com/" target="_blank">MRlin</a></h4>
+        <p>MRlin is a spell dueling game with pretty visuals created in the AGI course some years ago. We took inspiration from this game and had as a goal to focus a lot on the graphics part of the project. We wanted the visuals to be pretty and feel like real fireworks. In the beginning we also thought of using the same method of using the phones gyroscope in order to recognize when the phone had been placed down, in the end we did found another way we thought would work better.</p>
+        <h4><a href="https://agi23-g8.github.io/#/peak-panic-game" target="_blank">Peak Panic</a></h4>
+        <p>Another AGI project we looked at beforehand was Peak Panic. This project is a multiplayer experience with phones, where the players use their phones to connect to a single game session to ski on a single big screen. Similar to this game, our project was a single screen with a large amount of phone connections, creating similar kinds of challenges and opportunities.</p>
+        <h4><a href="https://ieeexplore.ieee.org/document/4958714" target="_blank" rel="noopener noreferrer">Real-time Simulation of Fireworks Based on GPU and Particle System</a></h4>
+        <p>This paper presents an algorithmic approach for simulating fireworks animation based on particle systems and physical dynamics principle. This paper gave greater understanding into how fireworks can be manually simulated, and how the built in particle system in Godot could be manipulated.</p>
+        <h3>Lessons Learned</h3>
+        <p>During the project a lot of insights have been gained. For one, focusing on accuracy of positioning may be wasted time, as people generally are satisfied if things look somewhat like they should. If the firework is half a meter off, visitors will still mainly be focusing on the anticipation of seeing their own fireworks. </p>
+        <p>One of the most important parts of the whole experience was customizing the fireworks on the phone. Although it did not happen too often, we found out that parents had customized their fireworks with their children for quite a long time, only to have a bug on the website or a connection error, which forced them to reload the website and lose all their designs. We minimized risk by adding re-send functionality when sending the fireworks to the server, however, there we some who still got that problem.</p>
+        <p>Another very important part of the experience was the physical space. The actual experience of placing the phone down, pressing “Fire” and then running back to watch the show was something we anticipated was important in the ideation phase, but was during the presentation brought to life when we observed children (and adults) running back to not be too close to the firework launch. If we had chosen to launch the fireworks directly from the user's phones, it would not have been the same experience.</p>
+        </div>
     </section>
 
     <!-- Gallery Section -->
